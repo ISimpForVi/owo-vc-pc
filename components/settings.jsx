@@ -1,9 +1,19 @@
 const {React} = require("powercord/webpack");
 const {TextInput, SwitchItem, FormItem} = require("powercord/components/settings");
 
-module.exports = ({getSetting, updateSetting, toggleSetting}) => (
-  <div>
-    <SwitchItem
+module.exports = class Settings extends React.Component {
+  constructor (props) {
+    super(props);
+    this.plugin = powercord.pluginManager.get('owo-vc-pc');
+    this.state = { opened: false };
+  }
+
+  render() {
+    const {getSetting, updateSetting, toggleSetting} = this.props;
+
+    return (
+      <div>
+        <SwitchItem
       note="zws generator"
       value={getSetting("zws", false)}
       onChange={() => toggleSetting("zws")}
@@ -24,5 +34,9 @@ module.exports = ({getSetting, updateSetting, toggleSetting}) => (
     >
       owoify
     </SwitchItem>
-  </div>
-)
+      </div>
+    )
+
+  }
+
+}

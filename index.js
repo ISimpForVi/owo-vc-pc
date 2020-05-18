@@ -23,7 +23,7 @@ const settings = require("./components/settings");
 
 module.exports = class Upload extends Plugin {
   startPlugin() {
-    this.registerSettings("owo-vc-shorten", "owo.vc Shorten URL", settings);
+    this.registerSettings("owo-vc-pc", "owo.vc Shorten URL", settings);
     this._injectContextMenu();
   }
 
@@ -68,7 +68,7 @@ module.exports = class Upload extends Plugin {
             window.removeEventListener('contextmenu', callback, true);
             const fn = instance._reactInternalFiber.child.child.type;
             const mdl = await getModule(m => m.default === fn);
-            inject('owo-vc-shorten', mdl, 'default', ([{
+            inject('owo-vc-pc', mdl, 'default', ([{
               target
             }], res) => {
               if (target.tagName.toLowerCase() === 'a') {
