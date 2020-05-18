@@ -1,0 +1,7 @@
+{
+  "name": "owo.vc Shorten URL",
+  "version": "1.0.0",
+  "description": "Allows you to POST URLs to owo.vc for shortening",
+  "author": "Ser Ames",
+  "license": "MIT"
+}
