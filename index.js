@@ -54,7 +54,7 @@ module.exports = class Upload extends Plugin {
       target
     }], res) => {
       if (target.tagName.toLowerCase() === 'a') {
-        res.props.children.push(
+        res.props.children.splice(4, 0,
           React.createElement(menu.MenuItem, {
             name: "Shorten URL with owo.vc",
             separate: false,
