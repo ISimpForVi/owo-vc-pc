@@ -14,25 +14,25 @@ module.exports = class Settings extends React.Component {
     return (
       <div>
         <SwitchItem
-      note="zws generator"
+      note="The format that the shortened URL will be generated in. The default is OwOified (eg: owo.vc/owo_uwu), while ZWS returns what looks like the same URL (owo.vc/), but the route is done with invisible characters"
       value={getSetting("zws", false)}
       onChange={() => toggleSetting("zws")}
     >
-      zws generator
+      ZWS URL Format
     </SwitchItem>
     <SwitchItem
-      note="Prevent Scrape"
+      note="Prevents owo.vc from sending the meta tags from the destination URL."
       value={getSetting("scrape", false)}
       onChange={() => toggleSetting("scrape")}
     >
-      Prevent Scrape
+      Prevent Metadata Scraping
     </SwitchItem>
     <SwitchItem
-      note="owoify"
+      note="OwOifies the metadata fetched from the URL."
       value={getSetting("owoify", false)}
       onChange={() => toggleSetting("owoify")}
     >
-      owoify
+      OwOify
     </SwitchItem>
       </div>
     )
