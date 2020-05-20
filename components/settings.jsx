@@ -14,7 +14,7 @@ module.exports = class Settings extends React.Component {
     return (
       <div>
         <SwitchItem
-      note="The format that the shortened URL will be generated in. The default is OwOified (eg: owo.vc/owo_uwu), while ZWS returns what looks like the same URL (owo.vc/), but the route is done with invisible characters"
+      note="The format that the shortened URL will be generated in. The default is OwOified (eg: owo.vc/owo_uwu), while ZWS returns what looks like the same URL (owo.vc/), but the route is done with invisible characters."
       value={getSetting("zws", false)}
       onChange={() => toggleSetting("zws")}
     >
