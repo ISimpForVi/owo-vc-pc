@@ -29,7 +29,7 @@ module.exports = class Upload extends Plugin {
     xhr.onreadystatechange = (() => {
       if (xhr.readyState == 4 && xhr.status == 200) {
         let res = JSON.parse(xhr.response)
-        clipboard.writeText("https://" + res.result, "selection")
+        clipboard.writeText("https://" + res.result)
       }
     })
     xhr.open("POST", "https://owo.vc/generate")
