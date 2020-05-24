@@ -9,17 +9,19 @@ const {
   React
 } = require("powercord/webpack");
 const {
-  inject
+  inject,
+  uninject
 } = require('powercord/injector');
-const {
-  getOwnerInstance
-} = require('powercord/util');
 const settings = require("./components/settings");
 
 module.exports = class Upload extends Plugin {
   startPlugin() {
     this.registerSettings("owo-vc-pc", "Shorten URL with owo.vc", settings);
     this._injectContextMenu();
+  }
+
+  pluginWillUnload() {
+    uninject("owo-vc-pc")
   }
 
   async upload(url) {
